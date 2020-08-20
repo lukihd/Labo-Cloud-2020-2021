@@ -1,0 +1,8 @@
+FROM python:alpine
+EXPOSE 8888
+WORKDIR /python-app
+COPY ./app /python-app
+RUN pip install flask
+ENTRYPOINT  ["python"]
+CMD [ "app.py"]
+

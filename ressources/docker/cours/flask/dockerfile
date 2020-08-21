@@ -1,8 +1,7 @@
-FROM python:alpine
+FROM python:3.6.12-alpine3.12
 EXPOSE 8888
 WORKDIR /python-app
 COPY ./app /python-app
 RUN pip install flask
 ENTRYPOINT  ["python"]
 CMD [ "app.py"]
-

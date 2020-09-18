@@ -12,7 +12,7 @@ L'objectif est de vous fammiliariser avec Docker et et les Dockerfiles sans trop
   - [lancer votre premier conteneur docker:](#lancer-votre-premier-conteneur-docker)
   - [Prendre en main les commandes Docker](#prendre-en-main-les-commandes-docker)
 - [II. Prise en Main du Dockerfile](#ii-prise-en-main-du-dockerfile)
-- [III. Bonus: faire communiquer des containeurs entre eux](#iii-bonus-faire-communiquer-des-containeurs-entre-eux)
+- [III. faire communiquer des containeurs entre eux](#iii-faire-communiquer-des-containeurs-entre-eux)
 
 le rendu sera sous forme d'un ficher .md ou vous remplirez les instructions pour chaque :triangular_flag_on_post: 
 
@@ -58,13 +58,13 @@ vous allez conteneriser votre premiere application web.
   * lance la commande ``npm install`` dans /app.
   * et lance la commande ``npm start`` dans /app.
 
-* :triangular_flag_on_post: faite un build du dockerfile et donnez un tag a l'image.
+* :triangular_flag_on_post: faites un build du dockerfile et donnez un tag a l'image.
 
 * lancez un conteneur avec avec l'image que vous avez crée en redirigeant le port 3000 exposé du conteneur vers le port 80 de votre hôte.
 
 * :triangular_flag_on_post: faites une capture d'écran de la la page web qui tourne sur 127.0.0.1 avec l'url inclus.
 
-# III. Bonus: faire communiquer des containeurs entre eux
+# III. faire communiquer des containeurs entre eux
 
 * créez une image mysql ou mariadb nommé ``mysql-container`` qui contient:
   * une base de données nommée ``mysqldb``.

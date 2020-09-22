@@ -51,29 +51,4 @@ router.get('/connection', function(req, res, next) {
   }
 });
 
-
-/*
-/* GET bonus page .
-connection.connect(function(err) {
-  if (err) {
-    fail = err;
-    success = err;
-  }else {
-  success = connection.threadId;
-  }
-});
-
-
-router.get('/connection', function(req, res, next) {
-  if (fail == success) {
-    res.render('fail', {title: fail})
-  }else {
-  res.render('connection', {title: success});
-  }
-});
-
-*/
-
-
-
 module.exports = router;

@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const mysql = require('mysql');
+const mysql = require('mysql')
+let connectionCheck = false
+let queryResults
 let success
 let fail
 
@@ -12,13 +14,46 @@ router.get('/', function(req, res, next) {
 /* mysql connection */
 
 var connection = mysql.createConnection({
-  host     : 'mysql-container',
+  host     : 'mariadb-container',
   user     : 'user',
   password : 'password',
   database : 'mysqldb'
 });
 
-/* GET bonus page .*/
+connection.connect(function(err) {
+  if (err) {
+    fail = err;
+  }else {
+  success = connection.threadId;
+  connectionCheck = true
+  }
+});
+
+
+connection.query('SELECT * from test', function (error, results, fields) {
+  if (error) {
+    fail = error
+  }
+  queryResults = results
+});
+
+
+router.get('/connection', function(req, res, next) {
+  if (fail) {
+    if (connectionCheck) {
+      res.render('failQuery'), {title: fail}
+    }else {
+      res.render('failConnection', {title: fail})
+    }
+  }
+  else {
+  res.render('connection', {title: success, queries: queryResults});
+  }
+});
+
+
+/*
+/* GET bonus page .
 connection.connect(function(err) {
   if (err) {
     fail = err;
@@ -29,12 +64,16 @@ connection.connect(function(err) {
 });
 
 
-router.get('/bonus', function(req, res, next) {
+router.get('/connection', function(req, res, next) {
   if (fail == success) {
     res.render('fail', {title: fail})
   }else {
-  res.render('bonus', {title: success});
+  res.render('connection', {title: success});
   }
 });
+
+*/
+
+
 
 module.exports = router;

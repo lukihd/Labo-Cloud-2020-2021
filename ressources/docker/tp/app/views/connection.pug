@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= "vous avez reussi gg ! "
+  p vous êtes connecté et votre id de connection est #{title}
+  ul
+    for query in queries
+      li= query.value

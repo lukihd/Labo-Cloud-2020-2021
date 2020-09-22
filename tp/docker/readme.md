@@ -12,7 +12,7 @@ L'objectif est de vous fammiliariser avec Docker et et les Dockerfiles sans trop
   - [lancer votre premier conteneur docker:](#lancer-votre-premier-conteneur-docker)
   - [Prendre en main les commandes Docker](#prendre-en-main-les-commandes-docker)
 - [II. Prise en Main du Dockerfile](#ii-prise-en-main-du-dockerfile)
-- [III. faire communiquer des containeurs entre eux](#iii-faire-communiquer-des-containeurs-entre-eux)
+- [III. comminication et gestion de volumes](#iii-comminication-et-gestion-de-volumes)
 
 le rendu sera sous forme d'un ficher .md ou vous remplirez les instructions pour chaque :triangular_flag_on_post: 
 
@@ -38,7 +38,7 @@ le rendu sera sous forme d'un ficher .md ou vous remplirez les instructions pour
 
 * attachez un shell au conteneur.
 
-* :triangular_flag_on_post: affichez tou les fichers dans ``/www``.
+* :triangular_flag_on_post: affichez tout les fichers dans ``/www``.
 
 * :triangular_flag_on_post: arretez le conteneur.
 
@@ -64,21 +64,20 @@ vous allez conteneriser votre premiere application web.
 
 * :triangular_flag_on_post: faites une capture d'écran de la la page web qui tourne sur 127.0.0.1 avec l'url inclus.
 
-# III. faire communiquer des containeurs entre eux
+# III. comminication et gestion de volumes
 
-* créez une image mysql ou mariadb nommé ``mysql-container`` qui contient:
-  * une base de données nommée ``mysqldb``.
+* créez une image mariadb nommé ``mariadb-container`` qui contient:
+  * le port 3306 exposé.
   * un utilisateur nommé ``user`` avec pour mot de passe ``password``.
+  * le mot de passe root en tant que ``toor``
 
 * lancez un conteneur node avec l'application node.js crée précedament.
 
-* lancez le conteneur mysql crée précedament.
-
 * trouvez une façon pour faire communiquer les deux conteneurs entre eux.
-  * naviguez sur la page /bonus de l'application web pour vérifier la connection.
+  * naviguez sur la page /connection de l'application web pour vérifier la connection.
 
 
-* :triangular_flag_on_post: faites une capture d'écran de la page /bonus de l'application web node avec son id de connection à la base de données.
+* :triangular_flag_on_post: faites une capture d'écran de la page /connection de l'application web node avec son id de connection à la base de données.
 
 
-* :bulb: vous trouverez tout les outils pour faire communiquer les conteneur [ici](https://docs.docker.com/engine/reference/commandline/run/#connect-a-container-to-a-network---network) pensez que c'est un probleme de réseau. :wink:
+* :bulb: vous trouverez tout les outils pour faire communiquer les conteneur [ici](https://docs.docker.com/engine/reference/commandline/run/#connect-a-container-to-a-network---network) :wink:

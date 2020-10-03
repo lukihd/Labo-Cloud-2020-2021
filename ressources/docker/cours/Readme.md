@@ -24,7 +24,7 @@ ceci est l'anexe de du cours sur docker.
 ## Le Fonctionement de docker
 
 ``` mermaid 
-graph LR
+graph TB
 
 Host((hôte)) --> Docker
 Docker -- contient  --> Engine(moteur docker)

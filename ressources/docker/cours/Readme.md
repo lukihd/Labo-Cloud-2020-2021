@@ -23,14 +23,37 @@ ceci est l'anexe de du cours sur docker.
 
 ## Le Fonctionement de docker
 
-``` mermaid 
-graph TB
+```flow
+
+H=>host: Hôte: Hôte
+D=>docker: Docker
+E=>engine: Moteur docker
+Dae=>daemon: Daemon docker
+DNS=>dns: Réseau interne docker
+V=>volume:  
+
+
+st=>start: Start:>http://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes
+or No?:>http://www.google.com
+io=>inputoutput: catch something...
+para=>parallel: parallel tasks
+
+st->op1->cond
+cond(yes)->io->e
+cond(no)->para
+para(path1, bottom)->sub1(right)->op1
+para(path2, top)->op1
+
+
+```
+
 
 Host((hôte)) --> Docker
 Docker -- contient  --> Engine(moteur docker)
 Engine -- gère/créée --> image
 image -- instancie --> container[conteneur docker]
 image((image docker))
-
-
-```

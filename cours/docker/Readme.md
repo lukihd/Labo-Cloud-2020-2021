@@ -39,16 +39,27 @@ ceci est l'annexe du cours sur docker.
 par exemple le dockerfile:
 
   - ```dockerfile
-    FROM centos:centos7
-    ENTRYPOINT [ "/bin/sh" ]
+    # tirer l'image docker de base tiré de dockerhub
+    FROM python:3.6.12-alpine3.12
+    # exposer le port 8888 a docker
+    EXPOSE 8888
+    # spécifier chemin dans lequel les instructions suivantes seront exectutées
+    WORKDIR /python-app
+    # copier les fichier de l'application python dans ./app dans /python-app
+    COPY ./app /python-app
+    # executer la commande pip install flask
+    RUN pip install flask
+    # lancer la commande "python"
+    ENTRYPOINT  ["python"]
+    # spécifier l'argument du entrypoint donc start de la commande python
+    CMD [ "app.py"]
     ```
+- l'image avec notre environementest créer avec la commande ``docker build . -t labocloud20202021:python``
 
-    Créer une machine avec une machine Centos 7 qui execute un shell.
-
-- une image est ensuite instancié pour créer un conteneur où l'application désiré tourne.
+- une image est ensuite instancié pour créer un conteneur où l'application tourne.
 par la commande:
-  - `` docker run centos:centos7 -it /bin:sh ``
-Lance un Conteneur avec l'image centos 7 en interactif (rentre dans le conteneur lors du lancement) et execute un shell
+  - ``docker run --rm -d --name flask -p 8080:8888 labocloud20202021:python``
+Qui lance un Conteneur nommé flask avec notre application web en détaché avec le port 8888 de notre conteneur relié au port 8080 de notre hôte qui se s'auto-détruira lors de sa fermeture.
 
 :warning: tout conteneur docker s'éteint automatiquement a la fin de son éxécution donc il faut toujours que quelque chose tourne dedans.
 
@@ -61,7 +72,6 @@ le moteur se découpe de telle façon:
 
 - un gestionnaire d'image.
 - un gestionnaire de conteneur.
-- un gestionnaire de log.
 - un gestionnaire de réseau.
 - un gestionnaire de services.
 

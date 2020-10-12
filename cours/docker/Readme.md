@@ -15,33 +15,19 @@ ceci est l'annexe du cours sur docker.
 
 - **Devops:** Une concentration de bonnes pratiques de développement logiciel ainsi que d'administration d'infrastructure ayant pour but d'avoir des cycles de dévelopment plus courts ainsi qu'une haute fréquence de déploiement en livraison continue.
 
-#
-
 - **Virtualisation:** Consiste à faire tourner sur une machine hôte un système d'exploitation complet dans un environnement isolé.
 
-#
-
 - **Conteneurisation:** Une forme de virtualisation qui tourne sur une application dans des environnements insolés appelés containers.
-
-#
 
 - **Docker:** Une plateforme de conteneurisation qui comporte:
   - Un moteur qui assure la gestion des conteneurs.
   - Un daemon qui assure la communication entre l'hôte et les conteneurs.
 
-#
-
 - **Image Docker:** Un patron pour instancier un conteneur docker. Il définit l’environnement dans lequel l’application réside.
-
-#
 
 - **Conteneur Docker:** Une instance d'une image docker ceci est l'environnement ou l'application tourne.
 
-#
-
 - **Dockerfile**: Un fichier Yaml qui dicte les commandes au moteur docker afin de créer une image docker.
-
-#
 
 - **Dockerhub:** Un dépôt d'images docker accessible sur [www.dockerhub.com](www.dockerhub.com) qui contient toutes les images officielles ainsi que la possibilités de stocker ses propres images dessus.
 
@@ -52,10 +38,11 @@ ceci est l'annexe du cours sur docker.
 - Docker créer une image qui se rapporte a un patron qui définit l'environnement.
 par exemple le dockerfile:
 
-  - ```
+  - ```dockerfile
     FROM centos:centos7
     ENTRYPOINT [ "/bin/sh" ]
     ```
+
     Créer une machine avec une machine Centos 7 qui execute un shell.
 
 - une image est ensuite instancié pour créer un conteneur où l'application désiré tourne.

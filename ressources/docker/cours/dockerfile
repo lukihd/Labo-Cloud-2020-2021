@@ -10,5 +10,5 @@ COPY ./app /python-app
 RUN pip install flask
 # lancer la commande "python" 
 ENTRYPOINT  ["python"]
-# spécifier l'argument du entrypoint donc start de "npm start"
+# spécifier l'argument du entrypoint donc start de la commande python
 CMD [ "app.py"]

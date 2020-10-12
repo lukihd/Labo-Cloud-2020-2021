@@ -49,7 +49,7 @@ afficher les conteneurs qui tournent
 
 ### options
 
-- Voir se qu'il se passe dans le contneneur ``-it``
+- Voir se qu'il se passe dans le conteneur ``-it``
 
 - lancer en détaché (libérer le terminal) ``d``
 

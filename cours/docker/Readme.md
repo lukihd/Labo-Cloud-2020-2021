@@ -43,20 +43,21 @@ par exemple le dockerfile:
     FROM python:3.6.12-alpine3.12
     # exposer le port 8888 a docker
     EXPOSE 8888
-    # spécifier chemin dans lequel les instructions suivantes seront exectutées
+    # spécifier chemin dans lequel les instructions suivantes seront exécutées
     WORKDIR /python-app
     # copier les fichier de l'application python dans ./app dans /python-app
     COPY ./app /python-app
-    # executer la commande pip install flask
+    # exécuter la commande pip install flask
     RUN pip install flask
     # lancer la commande "python"
     ENTRYPOINT  ["python"]
     # spécifier l'argument du entrypoint donc start de la commande python
     CMD [ "app.py"]
     ```
-- l'image avec notre environementest créer avec la commande ``docker build . -t labocloud20202021:python``
 
-- une image est ensuite instancié pour créer un conteneur où l'application tourne.
+- l'image avec notre environnement est créé avec la commande ``docker build . -t labocloud20202021:python``
+
+- Ensuite a partir de l'image on instancie un conteneur où l'application tourne.
 par la commande:
   - ``docker run --rm -d --name flask -p 8080:8888 labocloud20202021:python``
 Qui lance un Conteneur nommé flask avec notre application web en détaché avec le port 8888 de notre conteneur relié au port 8080 de notre hôte qui se s'auto-détruira lors de sa fermeture.

@@ -22,15 +22,15 @@ le rendu sera sous forme d'un ficher .md ou vous remplirez les instructions pour
 
 ## lancer votre premier conteneur docker:
 
-* Sur dockerhub téléchargez l'image docker ``tumtum/hello-world``.
+* Sur dockerhub téléchargez l'image docker ``tutum/hello-world``.
 
 * faites tourner l'image dans un conteneur docker helloworld avec le port 80 exposé. (lisez la doc sur dockerhub)
 
-* :triangular_flag_on_post: prennez une capture d'écran de la page web tumtum hello-world sur ``127.0.0.1``
+* :triangular_flag_on_post: prennez une capture d'écran de la page web tutum hello-world sur ``127.0.0.1``
 
 ## Prendre en main les commandes Docker
 
-* lancez un conteneur que vous nommerez hello-world avec l'image ``tumtum/hello-world`` en détataché.
+* lancez un conteneur que vous nommerez hello-world avec l'image ``tutum/hello-world`` en détataché.
 
 * :triangular_flag_on_post: affichez la liste des images docker sur votre hôte.
 

@@ -13,7 +13,7 @@ L'objectif est de vous familiariser avec Docker et les Dockerfiles sans trop ren
 
 le rendu sera sous forme d'un ficher .md ou vous remplirez les instructions pour chaque :triangular_flag_on_post:
 
-:warning: Si vous avez du mal n'hesitez pas a consulter la cheat sheet du cours et [l'example presenté en cours](../../ressources/docker/cours). :warning:
+:warning: Si vous avez du mal n'hésitez pas a consulter la cheat sheet du cours et [l'example presenté en cours](../../ressources/docker/cours). :warning:
 
 # I. Prise en Main de Docker
 

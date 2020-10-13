@@ -8,7 +8,7 @@ WORKDIR /python-app
 COPY ./app /python-app
 # executer la commande pip install flask
 RUN pip install flask
-# lancer la commande "python"
+# lancer la commande "python" 
 ENTRYPOINT  ["python"]
 # spécifier l'argument du entrypoint donc start de la commande python
 CMD [ "app.py"]

@@ -13,7 +13,7 @@ L'objectif est de vous familiariser avec Docker et les Dockerfiles sans trop ren
 
 le rendu sera sous forme d'un ficher .md ou vous remplirez les instructions pour chaque :triangular_flag_on_post:
 
-:warning: Si vous avez du mal n'hésitez pas a consulter la cheat sheet du cours et [l'example presenté en cours](../../ressources/docker/cours). :warning:
+:warning: Si vous avez du mal n'hésitez pas a consulter la [cheat {sheet du cours](../../cours/readme.md) et [l'example presenté en cours](../../ressources/docker/cours). :warning:
 
 # I. Prise en Main de Docker
 
@@ -63,10 +63,11 @@ vous allez conteneuriser votre première application web.
 
 # III. communication et gestion de volumes
 
-- créez une image mariadb nommé ``mariadb-container`` qui contient:
+- lancez un conteneur mariadb nommé ``mariadb-container`` qui contient:
   - le port 3306 exposé.
   - un utilisateur nommé ``user`` avec pour mot de passe ``password``.
   - le mot de passe root en tant que ``toor``
+  - avec un volume de la base de données trouvé [ici](./db) monté dans le bon dossier.
 
 - lancez un conteneur node avec l'application node.js crée précédemment.
 
@@ -75,4 +76,5 @@ vous allez conteneuriser votre première application web.
 
 - :triangular_flag_on_post: faites une capture d'écran de la page /connection de l'application web node avec son id de connection à la base de données.
 
-- :bulb: vous trouverez tout les outils pour faire communiquer les conteneur [ici](https://docs.docker.com/engine/reference/commandline/run/#connect-a-container-to-a-network---network) :wink:
+- :bulb: vous trouverez tout les outils pour faire communiquer les conteneur [ici](https://docs.docker.com/engine/reference/commandline/run/#connect-a-container-to-a-network---network).
+  et pensez a lire la documentation de l'image mariadb sur dockerhub! :wink:

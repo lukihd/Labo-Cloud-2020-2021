@@ -1,7 +1,0 @@
-FROM node:14.7-alpine3.12
-EXPOSE 3000
-WORKDIR /app
-COPY ./app /app/
-RUN npm install
-ENTRYPOINT [ "npm" ]
-CMD [ "start" ]

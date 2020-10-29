@@ -67,6 +67,7 @@ vous allez conteneuriser votre première application web.
   - le port 3306 exposé.
   - un utilisateur nommé ``user`` avec pour mot de passe ``password``.
   - le mot de passe root en tant que ``toor``
+  - la bdd s'appelle `mysqldb`
   - avec un volume de la base de données trouvé [ici](./db) monté dans le bon dossier.
 
 - lancez un conteneur node avec l'application node.js crée précédemment.

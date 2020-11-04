@@ -1,0 +1,10 @@
+version: '3'
+services:
+  webapp:
+    build: .
+    ports:
+     - "8080:5000"
+    volumes:
+     - .:/code
+  redis:
+    image: "redis:alpine"

@@ -4,7 +4,7 @@
 
 Ansible est un outil d'automatisation développé par RedHat. Il permet d'automatiser le déploiement de configurations, d'application, de container ou encore d'infrastructure réseau complexes. Ansible utilise le Yaml pour être Human readable et Machine readable. Le Yaml est le même langage utilisé par Docker et Docker-compose pour leurs configurations.
 
-Ansible est très utilisé dans le Cloud pour déployer des infrastructures Private ou Hybrid Cloud ou encore configurer les applications qui seront disponnibles sur l'infrastructure. Grâce à Ansible on peut configurer une multitude de machines en quelques minutes en simultané.
+Ansible est très utilisé dans le Cloud pour déployer des infrastructures Private ou Hybrid Cloud ou encore configurer les applications qui seront disponibles sur l'infrastructure. Grâce à Ansible on peut configurer une multitude de machines en quelques minutes en simultané.
 
 ## Glossaire
 
@@ -32,11 +32,11 @@ Pour installer Ansible installés le packet en fonction de votre distribution [i
 
 **Vous devez installer Ansible sur une VM si vous n'avez pas WSL Ubuntu**
 
-La machine doit avoir `Python3`, utilisez une machine Ubuntu pour plus de simplicité.
+La machine doit avoir `Python3` et avoir une paire de clés SSH, utilisez une machine Ubuntu pour plus de simplicité.
 
 ### Managed Node
 
-Le `Managed Node`est une machine recevant une configuration par Ansible. Ce peut être une machine ayant un système Unix ou Windows. Ici nous n'utiliserons que des machines Linux Ubuntu. Le node doit être accessible en `SSH` depuis le `Control Node`.
+Le `Managed Node`est une machine recevant une configuration par Ansible. Ce peut être une machine ayant un système Unix ou Windows. Ici nous n'utiliserons que des machines Linux Ubuntu. Le node doit avoir python 3 installé et être accessible en `SSH` depuis le `Control Node`. La communication doit se faire par le biai de clés SSH donc assurez vous que la connexion fonctionne.
 
 ### Inventory
 

@@ -1,0 +1,17 @@
+---
+- name: Update apt packages
+  become: yes
+  apt:
+    update_cache: yes
+
+- name: ensure latest packages for apache2
+  become: yes
+  apt:
+    name: apache2
+    state: present
+
+- name: restart apache
+  become: yes
+  service:
+    name: apache2
+    state: restarted

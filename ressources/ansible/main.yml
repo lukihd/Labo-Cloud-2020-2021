@@ -1,0 +1,5 @@
+---
+- name: Update machines and install apache
+  hosts: web
+  roles:
+    - apache

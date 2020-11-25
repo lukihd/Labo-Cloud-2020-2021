@@ -196,6 +196,9 @@ Un `Role` est un ensemble de tasks et de playbooks associés à une action réut
 Ansible propose une arborescence de fichier simples centrés sur les roles. Ici je vous présente une version simplifiée de l'arborescence :
 
 ```
+# configuration locale d'Ancible
+ancible.cfg
+
 # fichier inventory
 inventory.ini/yaml 
 

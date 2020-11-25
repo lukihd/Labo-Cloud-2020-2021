@@ -163,7 +163,7 @@ Vous devrez donc :
 - Installer Docker et ses dépendances sur toutes les machines (Attention le dépot de docker doit être reconnu par apt)
 >```
 >docker-ce
->docker-cli
+>docker-ce-cli
 >containerd.io
 >```
 - Ajouter l'utilisateur `ansible` au groupe Docker

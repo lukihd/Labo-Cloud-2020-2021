@@ -160,14 +160,13 @@ Puis dans le role common :
 Dans le role Docker vous devrez installer et configurer Docker afin que celui-ci soit opérationnel pour Kubernetes. Le role docker doit être exécuté sur les trois machines.
 
 Vous devrez donc :
-- Ajouter un utilisateur `admin` avec un home directory
 - Installer Docker et ses dépendances sur toutes les machines (Attention le dépot de docker doit être reconnu par apt)
 >```
 >docker-ce
 >docker-cli
 >containerd.io
 >```
-- Ajouter l'utilisateur `admin` au groupe Docker
+- Ajouter l'utilisateur `ansible` au groupe Docker
 
 ## Role Kubernetes master
 
@@ -181,8 +180,8 @@ Vous devrez donc :
 - Spécifier l'IP du node à kubelet (je vous conseille d'utiliser les variables d'Ansible)
 - Redémarer Kubelet dans l'état `Restarted`
 - Initialiser le cluster avec la commande `kubeadm --init` (je vous conseille de lire la doc de la commande pour utiliser les bon paramètres)
-- Configurer le fichier de configuration de kubernetes pour permettre à admin de gérer le cluster 
-(pour cela vous devrez copier le fichier admin.conf de kube et le mettre dans /home/admin/.kube/config, noubliez pas de donner les droits à admin sur le dossier .kube)
+- Configurer le fichier de configuration de kubernetes pour permettre à ansible de gérer le cluster 
+(pour cela vous devrez copier le fichier admin.conf de kube et le mettre dans /home/ansible/.kube/config, noubliez pas de donner les droits à ansible sur le dossier .kube)
 - Mettre en place le network provider pour kubernetes avec la commande `kubectl create -f https://docs.projectcalico.org/v3.4/getting-started/kubernetes/installation/hosted/calico.yaml`
 - Connecter le node au cluster avec la commande `kubeadm token create --print-join-command` (utilisez le paramètre de variable `register` pour stocker l'output de la commande)
 - Copier l'output de la commande et l'exporter dans un fichier `join-command` sur le Control Node.
@@ -202,8 +201,8 @@ Passons ensuite aux worker qui sont les machines "esclaves" du master.
 - Spécifier l'IP du node à kubelet (je vous conseille d'utiliser les variables d'Ansible)
 - Redémarer Kubelet dans l'état `Restarted`
 - Initialiser le cluster avec la commande `kubeadm --init` (je vous conseille de lire la doc de la commande pour utiliser les bon paramètres)
-- Configurer le fichier de configuration de kubernetes pour permettre à admin de gérer le cluster 
-(pour cela vous devrez copier le fichier admin.conf de kube et le mettre dans /home/admin/.kube/config, noubliez pas de donner les droits à admin sur le dossier .kube)
+- Configurer le fichier de configuration de kubernetes pour permettre à ansible de gérer le cluster 
+(pour cela vous devrez copier le fichier admin.conf de kube et le mettre dans /home/ansible/.kube/config, noubliez pas de donner les droits à ansible sur le dossier .kube)
 - Copier le fichier join-command précedement créé par le master dans le worker sous le nom `/tmp/join-command.sh` avec les droits 0777.
 - exécuter le script pour ajouter la machine au cluster
 

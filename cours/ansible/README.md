@@ -187,7 +187,52 @@ Si nous décortiquons la commande :
 - inventory.yml : Notre fichier inventory.
 - monplaybook.yml :  Le playbook à utiliser.
 
+### Role
+
+Un `Role` est un ensemble de tasks et de playbooks associés à une action réutilisable. Par exemple nous pouvons avoir un `Role` permetant d'installer et de configurer mysql. Celui-ci est réutilisable sur d'autre projet utilisant Mysql. Un role peut être appelé dans un playbook au même titre qu'une task.
+
+### Arborescence de fichiers
+
+Ansible propose une arborescence de fichier simples centrés sur les roles. Ici je vous présente une version simplifiée de l'arborescence :
+
+```
+# fichier inventory
+inventory.ini/yaml 
+
+# playbook principal initialisant les roles
+main.yml     
+
+# dossiers de variables si besoin
+group_vars/
+   group1                 
+   group2                 
+host_vars/
+   hostname1              
+   hostname2                          
+
+roles/
+  common/              
+    # tasks du role
+    tasks/            
+      main.yml      
+    # fichiers utilisés par le role      
+    files/            
+      bar.txt       
+      foo.sh  
+    # variables associés au role      
+    vars/             
+      main.yml
+    main.yml
+```
+
 ## Tips
+
+### Connection à distance
+
+Comme ansible doit se connecter à distance, il doit avoir son propre utilisateur. C'est pourquoi chaque Managed node a un utilisateur ansible avec des droits sudo. On doit pouvoir se connecter à cet utilisateur par le biai de clés ssh. Pour spécifier à ansible que nous utilisons un utilisateur autre que root, il faut entrer le champ suivant dans un playbook ou dans le fichier `ansible.cfg` :
+```
+remote_user = ansible
+```
 
 ### Devenir Sudo
 
@@ -195,5 +240,5 @@ Pour exécuter des commandes administrateur vous devrez spécifier le paramètre
 
 ### Dry-run
 
-Avant de lancer une commande il faut s'assurer qu'elle va fonctionner. Pour cela Ansible dispose de l'argument `--dry-run`. Cette argument permet de lancer le playbook sans que celui-ci n'altère l'état des machines cibles. En effet il va simuler l'exécution du playbook. Si l'exécution est correcte alors vous aurez de grandes chance que votre configuration fonctionne.
+Avant de lancer une commande il faut s'assurer qu'elle va fonctionner. Pour cela Ansible dispose de l'argument `--check`. Cette argument permet de lancer le playbook sans que celui-ci n'altère l'état des machines cibles. En effet il va simuler l'exécution du playbook. Si l'exécution est correcte alors vous aurez de grandes chance que votre configuration fonctionne.
 

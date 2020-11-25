@@ -208,7 +208,7 @@ Passons ensuite aux worker qui sont les machines "esclaves" du master.
 
 Désormais vous devriez avoir un serveur kubernetes fonctionnel. Pour le tester utilisez la commande suivante dans le master ceci vous installera le dashboard officiel kubernetes :
 ```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+kubectl get nodes
 ```
 
 Pour y accéder aller sur 10.0.0.2:8001
